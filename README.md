@@ -1,4 +1,4 @@
-# A Syntax-aware Multi-task Learning Framwework for Chinese Semantic Role Labeling
+# A Syntax-aware Multi-task Learning Framework for Chinese Semantic Role Labeling
 This repository contains codes and configs for training models presented in : [A Syntax-aware Multi-task Learning Framework for Chinese Semantic Role Labeling](XXX)
 
 ## Data
