@@ -21,7 +21,14 @@ For test, you should run the predict.sh presentated in the exp-baseline-MTL-IIR/
 ```bash
 ./predict.sh 0
 ```
-## Significance Test and Evaluation
+## End-to-End Evaluation
+To evaluate the end-to-end results, you should run the script two times!
+```
+srl-eval.pl gold_file sys_file
+srl-eval.pl sys_file gold_file
+```
+The first command gives the actual recall score (reported recall score) and the second command gives the actual precision (reported recall) score.
+## Significance Test
 We put the Dan Bikel's comparer in the scripts directory. The workflow is as follows:
 #### 1. To get the sentence-level F1 score of model A and B
 A.output should be conll format
@@ -33,4 +40,5 @@ python2 each_sentence_analysis.py B.output > B.evalb
 ```
 perl compare.pl -n 10000 A.evalb B.evalb
 ```
+
 
