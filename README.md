@@ -21,4 +21,16 @@ For test, you should run the predict.sh presentated in the exp-baseline-MTL-IIR/
 ```bash
 ./predict.sh 0
 ```
+## Significance Test and Evaluation
+We put the Dan Bikel's comparer in the scripts directory. The workflow is as follows:
+#### 1. To get the sentence-level F1 score of model A and B
+A.output should be conll format
+```
+python2 each_sentence_analysis.py A.output > A.evalb
+python2 each_sentence_analysis.py B.output > B.evalb
+```
+#### 2. Move into the dir ``significance_test'' and conduct the evaluation to get the *p_value for precision*.
+```
+perl compare.pl -n 10000 A.evalb B.evalb
+```
 
